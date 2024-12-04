@@ -44,6 +44,12 @@ const handleCheckoutShopping = (e) => {
     dispatch(removeItem(item));
   };
 
+  const CartIcon = ({ totalQuantity }) => (
+  <div className="cart-icon">
+    <span>Cart ({totalQuantity})</span>
+  </div>
+);
+
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
     return item.quantity * Number(item.cost.replace("$", ""));
